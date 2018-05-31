@@ -31,5 +31,8 @@ bool Game::on_init()
 
     test = GameTexture::on_load(renderer, "gfx/characters.png");
 
+    anime_king.max_frames = 4;
+
+
     return true;
 }

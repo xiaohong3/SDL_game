@@ -2,5 +2,5 @@
 
 void Game::on_loop()
 {
-
+    anime_king.on_animate();
 }

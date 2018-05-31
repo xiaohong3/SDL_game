@@ -3,8 +3,10 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
 #include "GameEvent.h"
 #include "GameTexture.h"
+#include "GameAnimation.h"
 
 class Game : public GameEvent
 {
@@ -26,6 +28,7 @@ class Game : public GameEvent
         SDL_Window* window;
         SDL_Renderer* renderer;
         SDL_Texture* test;
+        GameAnimation anime_king;
 
         int WIN_W = 640;
         int WIN_H = 480;
