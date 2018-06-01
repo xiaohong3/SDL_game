@@ -29,10 +29,10 @@ bool Game::on_init()
         return false;
     }
 
-    test = GameTexture::on_load(renderer, "gfx/characters.png");
+    test = GameTexture::on_load(renderer, "gfx/yoshi.png");
 
-    anime_king.max_frames = 4;
-
+    anime_king.max_frames = 8;
+    anime_king.oscillate = false;
 
     return true;
 }
