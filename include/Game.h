@@ -4,6 +4,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include "Define.h"
+
 #include <vector>
 #include "GameEvent.h"
 #include "GameEntity.h"
@@ -30,9 +32,6 @@ class Game : public GameEvent
 
         GameEntity entity1;
         GameEntity entity2;
-
-        int WIN_W = 640;
-        int WIN_H = 480;
 };
 
 #endif // GAME_H
