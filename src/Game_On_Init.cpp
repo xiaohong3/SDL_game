@@ -29,10 +29,20 @@ bool Game::on_init()
         return false;
     }
 
-    test = GameTexture::on_load(renderer, "gfx/yoshi.png");
+    if (entity1.on_load(renderer, "gfx/yoshi.png", 64, 64, 8) == false)
+    {
+        return false;
+    }
 
-    anime_king.max_frames = 8;
-    anime_king.oscillate = false;
+    if (entity2.on_load(renderer, "gfx/yoshi.png", 64, 64, 8) == false)
+    {
+        return false;
+    }
+
+    entity2.x = 100;
+
+    GameEntity::entity_list.push_back(&entity1);
+    GameEntity::entity_list.push_back(&entity2);
 
     return true;
 }

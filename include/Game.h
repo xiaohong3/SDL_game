@@ -4,9 +4,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include <vector>
 #include "GameEvent.h"
-#include "GameTexture.h"
-#include "GameAnimation.h"
+#include "GameEntity.h"
 
 class Game : public GameEvent
 {
@@ -27,8 +27,9 @@ class Game : public GameEvent
         bool running;
         SDL_Window* window;
         SDL_Renderer* renderer;
-        SDL_Texture* test;
-        GameAnimation anime_king;
+
+        GameEntity entity1;
+        GameEntity entity2;
 
         int WIN_W = 640;
         int WIN_H = 480;

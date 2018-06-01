@@ -4,7 +4,6 @@ Game::Game()
 {
     window = nullptr;
     renderer = nullptr;
-    test = nullptr;
 
     running = true;
 }

@@ -2,5 +2,9 @@
 
 void Game::on_loop()
 {
-    anime_king.on_animate();
+    std::vector<GameEntity*>::iterator iter;
+    for (iter = GameEntity::entity_list.begin(); iter != GameEntity::entity_list.end(); ++iter)
+    {
+        (*iter)->on_loop();
+    }
 }

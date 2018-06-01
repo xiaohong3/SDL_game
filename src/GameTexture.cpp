@@ -49,3 +49,9 @@ bool GameTexture::on_draw(SDL_Renderer* renderer, SDL_Texture* texture, int x, i
     SDL_RenderCopy(renderer, texture, &src_r, &dst_r);
     return true;
 }
+
+void GameTexture::on_cleanup(SDL_Texture* texture)
+{
+    SDL_DestroyTexture(texture);
+    texture = nullptr;
+}
