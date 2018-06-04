@@ -44,5 +44,8 @@ bool Game::on_init()
     GameEntity::entity_list.push_back(&entity1);
     GameEntity::entity_list.push_back(&entity2);
 
+    GameMap map;
+    map.on_load("maps/1.map");
+
     return true;
 }

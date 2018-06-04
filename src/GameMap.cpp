@@ -14,9 +14,11 @@ bool GameMap::on_load(char* file)
 {
     tile_list.clear();
 
-    File* file_handle = fopen(file, "r");
+    std::ifstream ifs;
 
-    if (file_handle == nullptr)
+    ifs.open(file, std::ios_base::in);
+
+    if (!ifs)
     {
         return false;
     }
@@ -26,13 +28,23 @@ bool GameMap::on_load(char* file)
         for (int x = 0; x < MAP_WIDTH; ++x)
         {
             GameTile tile;
-            fscanf(file_handle, "%d:%d ", &tile.tile_id, &tile.type_id);
+            // fscanf(file_handle, "%d:%d ", &tile.tile_id, &tile.type_id);
+            std::string tile_info;
+            ifs >> tile_info;
+
+            std::stringstream sstream(tile_info);
+            char temp;
+
+            sstream >> tile.tile_id;
+            sstream >> temp;
+            sstream >> tile.type_id;
+
             tile_list.push_back(tile);
         }
-        fscanf(file_handle, "\n");
+        // fscanf(file_handle, "\n");
     }
 
-    fclose(file_handle);
+    ifs.close();
 
     return true;
 }
@@ -47,7 +59,7 @@ void GameMap::on_render(SDL_Renderer* renderer, int map_x, int map_y)
     int tile_texture_w = 0;
     int tile_texture_h = 0;
 
-    SDL_QueryTexture(texture, nullptr, -1, &tile_texture_w, &tile_texture_h);
+    SDL_QueryTexture(texture, nullptr, nullptr, &tile_texture_w, &tile_texture_h);
 
     int tile_set_w = tile_texture_w / TILE_SIZE;
     int tile_set_h = tile_set_h / TILE_SIZE;

@@ -9,6 +9,7 @@
 #include <vector>
 #include "GameEvent.h"
 #include "GameEntity.h"
+#include "GameMap.h"
 
 class Game : public GameEvent
 {

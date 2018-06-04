@@ -2,8 +2,9 @@
 #define GAMEMAP_H
 
 #include <vector>
-#include <cstdio>
-#include <stdio.h>
+#include <fstream>
+#include <iostream>
+#include <sstream>
 #include <SDL2/SDL.h>
 #include "Define.h"
 #include "GameTile.h"
